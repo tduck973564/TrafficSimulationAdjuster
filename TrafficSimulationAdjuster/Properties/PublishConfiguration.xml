@@ -1,0 +1,43 @@
+﻿<Publish>
+	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
+	<ModId Value="76836" />
+	<!--Name of the mod to display to players-->
+	<DisplayName Value="Traffic Simulation Adjuster" />
+	<!--Short description of the mod-->
+	<ShortDescription Value="Adjust values of traffic simulation WIP" />
+	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
+	<!--LongDescription Value="This is a long description" /-->
+	<LongDescription>
+# Traffic Simulation Adjuster
+
+**Disclaimer**: This is currently a WIP because the settings pane isn't done so there isn't any actual adjustment, along with it only changing TrafficReduction.
+		
+Currently only disables the restriction that reduces how much traffic spawns the bigger the city gets. A performance hit is to be expected. An adjustment option is in the works.
+
+Thanks to algernon and Infixo for the help and mxdanger for the idea.
+
+Forum post about the mechanic is here: https://forum.paradoxplaza.com/forum/threads/unlock-developer-restrictions-on-traffic-flow.1608201/
+
+Contact me on Discord (`fesdonomist`) for any queries.
+	</LongDescription>
+	<!--Thumbnail-->
+	<Thumbnail Value="Properties/Thumbnail.png" />
+	<!--Screenshot, can be set multiple times-->
+	<Screenshot Value="Properties/Gallery.png" />
+	<!--Tag, can be set multiple times-->
+	<Tag Value="" />
+	<!--Link to the forum post where the mod can be discussed-->
+	<ForumLink Value="" />
+	<!--Version of the mod-->
+	<ModVersion Value="0.2" />
+	<!--Recommended version of the base game to use the mod-->
+	<GameVersion Value="1.1.*" />
+	<!--Dependency for the mod, can be set multiple times-->
+	<Dependency Id="" />
+	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
+	<ChangeLog Value="Changed method of patching prefabs, should work now" />
+	<!--ChangeLog>
+	</ChangeLog-->
+	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
+	<ExternalLink Type="discord" Url="https://discord.com/users/427702345879781377" />
+</Publish>
