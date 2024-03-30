@@ -23,11 +23,11 @@ namespace TrafficSimulationAdjuster
             return m_PrefabSystem.TryGetPrefab(prefabID, out prefabBase) && m_PrefabSystem.TryGetEntity(prefabBase, out entity);
         }
 
-        internal void PatchEconomyParameters()
+        internal void PatchEconomyParameters(int trafficReduction)
         {
             if (TryGetPrefab(nameof(EconomyPrefab), "EconomyParameters", out PrefabBase prefabBase, out Entity entity) && m_PrefabSystem.TryGetComponentData<EconomyParameterData>(prefabBase, out EconomyParameterData comp))
             {
-                comp.m_TrafficReduction = 0f; // vanilla is 0.0004f
+                comp.m_TrafficReduction = trafficReduction / 10_000f; // vanilla is 0.0004f
                 m_PrefabSystem.AddComponentData(prefabBase, comp);
                 Mod.Log.Info($"Patched {prefabBase.name} for TrafficReduction={comp.m_TrafficReduction}");
             }

@@ -25,7 +25,7 @@ namespace TrafficSimulationAdjuster
             
             // Patch prefabs
             PrefabPatcher patcher = new PrefabPatcher();
-            patcher.PatchEconomyParameters();
+            patcher.PatchEconomyParameters(Options.TrafficReductionCoefficient);
         }
 
         public void OnDispose()
