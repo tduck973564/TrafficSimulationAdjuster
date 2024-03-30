@@ -1,5 +1,4 @@
-﻿using System;
-using Colossal.IO.AssetDatabase;
+﻿using Colossal.IO.AssetDatabase;
 using Game.Modding;
 using Game.Settings;
 
@@ -27,7 +26,7 @@ public class TrafficSimulationAdjusterOptions : ModSetting
         }
     }
     
-    public override void SetDefaults()
+    public sealed override void SetDefaults()
     {
         TrafficReductionCoefficient = 4;
     }
