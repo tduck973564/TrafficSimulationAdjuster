@@ -14,15 +14,15 @@ public class TrafficSimulationAdjusterOptions : ModSetting
         SetDefaults();
     }
 
-    private int _TrafficReductionCoefficient;
+    private int _trafficReductionCoefficient;
     [SettingsUISlider(min = 0, max = 10)]
     public int TrafficReductionCoefficient
     {
-        get { return _TrafficReductionCoefficient; }
+        get => _trafficReductionCoefficient;
         set
         {
-            if (_TrafficReductionCoefficient == value) return;
-            _TrafficReductionCoefficient = value;
+            if (_trafficReductionCoefficient == value) return;
+            _trafficReductionCoefficient = value;
             new PrefabPatcher().PatchEconomyParameters(value);
         }
     }
