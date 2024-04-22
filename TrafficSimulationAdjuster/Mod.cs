@@ -17,6 +17,7 @@ namespace TrafficSimulationAdjuster
             Options = new(this);
             Options.RegisterInOptionsUI();
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(Options));
+            GameManager.instance.localizationManager.AddSource("zh-HANS", new LocaleZHHANS(Options));
             
             Log.Info(nameof(OnLoad));
 
