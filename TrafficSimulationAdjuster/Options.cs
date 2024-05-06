@@ -10,24 +10,20 @@ public class TrafficSimulationAdjusterOptions : ModSetting
     public TrafficSimulationAdjusterOptions(IMod mod)
         : base(mod)
     {
-        SetDefaults();
+        if (TrafficReductionCoefficient == 0) SetDefaults();
     }
 
-    private int _trafficReductionCoefficient;
-    [SettingsUISlider(min = 0, max = 10)]
-    public int TrafficReductionCoefficient
-    {
-        get => _trafficReductionCoefficient;
-        set
-        {
-            if (_trafficReductionCoefficient == value) return;
-            _trafficReductionCoefficient = value;
-            new PrefabPatcher().PatchEconomyParameters(value);
-        }
-    }
+    [SettingsUISlider(min = 0, max = 10)] 
+    [SettingsUISetter(typeof(ModSetting), nameof(ApplySettings))]
+    public int TrafficReductionCoefficient { get; set; }
     
     public sealed override void SetDefaults()
     {
         TrafficReductionCoefficient = 4;
+    }
+    
+    public void ApplySettings()
+    {
+        new PrefabPatcher().PatchEconomyParameters(TrafficReductionCoefficient);
     }
 }
