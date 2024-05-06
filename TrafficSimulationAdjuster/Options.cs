@@ -7,7 +7,10 @@ namespace TrafficSimulationAdjuster;
 [FileLocation(nameof(TrafficSimulationAdjuster))]
 public class TrafficSimulationAdjusterOptions : ModSetting
 {
-    public TrafficSimulationAdjusterOptions(IMod mod) : base(mod) { }
+    public TrafficSimulationAdjusterOptions(IMod mod) : base(mod)
+    {
+        SetDefaults();
+    }
 
     [SettingsUISlider(min = 0, max = 10)] 
     [SettingsUISetter(typeof(TrafficSimulationAdjusterOptions), nameof(ApplySettings))]

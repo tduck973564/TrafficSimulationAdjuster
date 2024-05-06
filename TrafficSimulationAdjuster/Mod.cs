@@ -1,4 +1,5 @@
-﻿using Colossal.Logging;
+﻿using Colossal.IO.AssetDatabase;
+using Colossal.Logging;
 using Game;
 using Game.Modding;
 using Game.SceneFlow;
@@ -15,6 +16,7 @@ namespace TrafficSimulationAdjuster
         public void OnLoad(UpdateSystem updateSystem)
         {
             Options = new(this);
+            AssetDatabase.global.LoadSettings(nameof(TrafficSimulationAdjuster), Options, new TrafficSimulationAdjusterOptions(this));
             Options.RegisterInOptionsUI();
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(Options));
             GameManager.instance.localizationManager.AddSource("zh-HANS", new LocaleZHHANS(Options));
